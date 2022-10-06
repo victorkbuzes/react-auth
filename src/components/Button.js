@@ -1,6 +1,9 @@
 import React from "react";
 
+
 const Button = ({ label, onClick, isNavbar }) => {
+
+
   return (
     <div>
       {isNavbar ? (
@@ -14,7 +17,9 @@ const Button = ({ label, onClick, isNavbar }) => {
           <button className="btn btn-primary btn-change" type="submit">
             {label}
           </button>
+         
         </div>
+        
       )}
     </div>
   );

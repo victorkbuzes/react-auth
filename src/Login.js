@@ -18,20 +18,23 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    navigate("/home");
-    console.log(user);
-    // ...
-  })
-  .catch((error) => {
-    setError(true)
-   
-  });
-  
+    function onRegister() {
+      signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        navigate("/home");
+        console.log(user);
+      })
+      .catch((error) =>
+        setError(true)
+      );
+     
+    }
+    onRegister();
   };
+       
+  
+  
 
   return (
     <div className="container login">

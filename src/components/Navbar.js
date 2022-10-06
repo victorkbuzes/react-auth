@@ -1,9 +1,23 @@
+
 import React from "react";
 import { useNavigate } from 'react-router-dom'
+
 import Button from "./Button";
 
 const Navbar = () => {
-  let navigate = useNavigate()
+
+  const navigate = useNavigate();
+
+
+  const clickLogin = () => {
+    navigate("/login");
+    
+  }
+  const clickSignup = () => {
+    navigate("/signup");
+  };
+  
+
 
   return (
     <div>
@@ -18,9 +32,9 @@ const Navbar = () => {
               aria-label="Search"
             />
             <div className="d-flex">
-            <Button onClick={()=>navigate("/signup")} isNavbar={true} label="signup" />
+            <Button onClick={clickSignup} isNavbar={true}   label="signup" />
             <div className="mx-2">
-            <Button onClick={()=>navigate("/login")} isNavbar={true} label="login" />
+            <Button onClick={clickLogin} isNavbar={true} label="login" />
             </div>
             </div>
           </form>

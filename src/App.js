@@ -4,18 +4,23 @@ import Navbar from "./components/Navbar";
 import Login from "./Login";
 import Signup from "./Signup";
 import Home from "./Home";
+import { AuthProvider } from "./context/AuthProvider";
 
 
 function App() {
   return (
-    <div className="App container">
-      <Routes>
-        <Route path="/" element={<Navbar />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/home" element={<Home />} />
-      </Routes>
+    <AuthProvider>
+      <div className="App container">
+        <Routes>
+          <Route path="/" element={<Navbar />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
     </div>
+
+    </AuthProvider>
+  
   );
 }
 
